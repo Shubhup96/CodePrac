@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int nocase;
+    cin>>nocase;
+    int size,noarr[nocase],temp=0,c=0;
+    char strings[nocase][26];
+    
+    for(int i=0;i<nocase;i++)
+    {
+        cin>>size>>strings[i];
+        for(int j=0;j<size;j++)
+        {
+            if(strings[i][j]>=48 && strings[i][j]<=57)
+            {
+                c=j;
+                while(strings[i][c]>=48 && strings[i][c]<=57)
+                {
+                    c++;
+                }
+                j=c;
+             temp++;
+            }
+        }
+        noarr[i]=temp;
+    }
+    for(int i=0;i<nocase;i++)
+       cout<<noarr[i]<<endl;
+    return 0;
+}
